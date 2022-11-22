@@ -1,3 +1,16 @@
+Calico Cloud currently includes following detectors focused on the execution and privilege-escalation stages of cyberattacks and intrusions.
+ 
+Privilege-Escalation: 
+- Linux-Administrative-Command
+- Set-Linux-Capabilities
+
+Execution:
+- Attack Tools
+- Cryptomining Pool Hostname
+- Curl or wget to Suspicious TLD
+- DNS Attack Tool
+
+
 # Container-threat-detection
 
 **Enable on all nodes**
