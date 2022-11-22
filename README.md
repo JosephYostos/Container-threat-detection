@@ -47,9 +47,14 @@ kubectl exec -it multitool -- bash
 ```
 
 Linux-Administrative-Command
+Set-Linux-Capabilities
 
 ```bash
 adduser joseph
+su -
+add user joseph
+chown joseph file.txt
+nmap -Pn -r -p 1-900 $POD_IP
 ```
 
 Set-Linux-Capabilities
@@ -59,12 +64,38 @@ touch file.txt
 setcap cap_net_raw+ep file.txt
  ```
  
+**Mitigate the risk of exploitation using security policy**
+
+Once you get the alert and are sure this is not a legitimate activity, you may need to quarantine this pod using Calico security policy. 
+
+A best practice is to always have quarantine policy preconfigured in each cluster  
+
+
+```bash
+apiVersion: projectcalico.org/v3
+kind: GlobalNetworkPolicy
+metadata:
+  name: security.quarantine
+spec:
+  tier: security
+  order: 100
+  selector: quarantine == "true"
+  ingress:
+    - action: Log
+    - action: Deny
+  egress:
+    - action: Log
+    - action: Deny
+  types:
+    - Ingress
+    - Egress
+```
+
+So you can easily quarantine the malicious workload by adding the label “quarantine=true", here is an example:
+
+```bash
+kubectl label pod maliciouspod quarantine=true
+```
  
- 
- 
- 
- su -
- add user joseph
- chown joseph file.txt
-  nmap -Pn -r -p 1-900 $POD_IP
+
  
