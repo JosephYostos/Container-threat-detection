@@ -3,14 +3,15 @@
 Calico Cloud currently includes following detectors focused on the execution and privilege-escalation stages of cyberattacks and intrusions.
  
 Privilege-Escalation: 
-- Linux-Administrative-Command
-- Set-Linux-Capabilities
+- Linux-Administrative-Command: A pod was detected executing Linux administrative commands using super-user privileges.
+- Set-Linux-Capabilities: A pod was detected executing commands on the system to modify a file, user, or group capabilities
 
 Execution:
-- Attack Tools
-- Cryptomining Pool Hostname
-- Curl or wget to Suspicious TLD
-- DNS Attack Tool
+- Attack Tools: A pod was detected executing a known attack tool on the pod. For example, nmap, nping, ndiff, masscan, amass…etc
+- Cryptomining Pool Hostname: A pod was detected executing curl or wget to a crypto-mining pool, an indication that the pod may be used to mine cryptocurrency.
+- Curl or wget to Suspicious TLD: A pod was detected executing curl or wget to a suspicious Top Level Domain (TLD). Attackers may use CLI tools such as CURL or WGET to communicate with attack infrastructure, or download malicious payloads. 
+- DNS Attack Tool: A pod was detected executing a known DNS attack tool on the pod
+- System Enumeration Tool: A pod was detected executing a known third-party system enumeration tool
 
 
 
