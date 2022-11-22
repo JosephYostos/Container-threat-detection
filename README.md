@@ -68,7 +68,6 @@ adduser joseph
 su -
 add user joseph
 chown joseph file.txt
-nmap -Pn -r -p 1-900 $POD_IP
 ```
 
 Set-Linux-Capabilities
@@ -78,6 +77,11 @@ touch file.txt
 setcap cap_net_raw+ep file.txt
  ```
  
+Attack Tools
+```bash
+nmap -Pn -r -p 1-900 $POD_IP
+```
+
 **Mitigate the risk of exploitation using security policy**
 
 Once you get the alert and are sure this is not a legitimate activity, you may need to quarantine this pod using Calico security policy. 
