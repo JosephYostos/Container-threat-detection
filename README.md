@@ -61,7 +61,6 @@ kubectl exec -it multitool -- bash
 ```
 
 Linux-Administrative-Command
-Set-Linux-Capabilities
 
 ```bash
 adduser joseph
