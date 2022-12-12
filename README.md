@@ -37,7 +37,7 @@ Make sure that runtime-reporters pod is runing
 kubectl get pods -n calico-system
 ```
 
-**change aggregation periot**
+**change aggregation period**
 
 The default configuration of the runtime-reporter has an Aggregation period of 15  minutes [period: 15m].  
 In order to expedite testing you may like to significantly reduce this to 15 seconds
