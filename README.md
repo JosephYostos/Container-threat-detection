@@ -34,7 +34,7 @@ kubectl label nodes <node-name> enable-tigera-runtime-security=t
 Make sure that runtime-reporters pod is runing 
 
 ```basg
-kubectl get pods -n calico-system
+kubectl get pods -n tigera-runtime-security
 ```
 
 **change aggregation period**
